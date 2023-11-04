@@ -1759,11 +1759,12 @@ figcaption {
 }
 
 .form-block {
+  z-index: 1;
   flex-direction: column;
   justify-content: center;
   margin-bottom: 0;
   display: flex;
-  position: static;
+  position: relative;
 }
 
 .contact {
@@ -1920,6 +1921,7 @@ figcaption {
   margin-bottom: 20rem;
   margin-left: -32px;
   display: block;
+  overflow: hidden;
 }
 
 .dropdown-div {
@@ -1944,6 +1946,7 @@ figcaption {
   height: auto;
   border-bottom-style: none;
   display: block;
+  overflow: hidden;
 }
 
 .dropdown-title {
@@ -2233,6 +2236,7 @@ figcaption {
   flex-direction: column;
   margin-top: 0;
   display: flex;
+  overflow: hidden;
 }
 
 .text-inside-dropdown {
@@ -2976,6 +2980,7 @@ figcaption {
 .paris-wrapper-cafeflore {
   width: 50%;
   height: 100%;
+  object-fit: cover;
 }
 
 .yellowtaxi_wrapper {
@@ -3525,13 +3530,16 @@ figcaption {
 }
 
 .html-embed-2 {
-  width: 100%;
+  width: 146%;
   height: 100%;
+  object-fit: contain;
   object-position: 50% 50%;
+  padding-top: 55px;
+  padding-bottom: 55px;
 }
 
 .div-block-27 {
-  width: 250%;
+  width: 100%;
   height: 150%;
   filter: blur(20px);
   object-fit: cover;
@@ -3746,14 +3754,15 @@ figcaption {
 }
 
 .paris_row2 {
-  height: 35rem;
+  width: 100%;
+  height: 75vh;
   display: flex;
 }
 
 .paris_wrapper_taxi {
-  width: 45%;
+  width: 50%;
   height: 100%;
-  max-width: 45%;
+  max-width: 50%;
   border: 2px #000;
   margin-top: 0;
   padding: 0;
@@ -3769,7 +3778,7 @@ figcaption {
 }
 
 .paris_text-row1 {
-  width: 30%;
+  width: 35%;
   height: 100%;
   flex-direction: column;
   align-items: center;
@@ -4338,12 +4347,13 @@ figcaption {
 }
 
 .paris_row11 {
+  height: 50vh;
   display: flex;
 }
 
 .paris_image-cafeflore {
   z-index: 1;
-  max-height: 23rem;
+  max-height: 100%;
   object-fit: cover;
   margin-bottom: 0;
   position: relative;
@@ -4351,12 +4361,13 @@ figcaption {
 
 .paris-wrapper-alpine {
   width: 55%;
+  max-height: 100%;
   object-fit: cover;
 }
 
 .paris-image-alpine {
   height: 100%;
-  max-height: 23rem;
+  max-height: 100%;
   max-width: 100%;
   aspect-ratio: auto;
   object-fit: cover;
@@ -4736,6 +4747,10 @@ figcaption {
   background-color: #ddd;
 }
 
+.text-block-38 {
+  display: none;
+}
+
 @media screen and (min-width: 1280px) {
   .spacer-large {
     padding-top: 0;
@@ -4745,8 +4760,16 @@ figcaption {
     padding-top: 4rem;
   }
 
+  .image {
+    display: none;
+  }
+
   .hero-image {
     height: 100%;
+  }
+
+  .right-side {
+    z-index: 5;
   }
 
   .left-side {
@@ -4758,6 +4781,14 @@ figcaption {
     width: 100%;
     height: 100%;
     position: static;
+  }
+
+  .text-block-3 {
+    font-size: 3.4rem;
+  }
+
+  .text-block-3.email {
+    font-size: 1.7rem;
   }
 
   .form-block {
@@ -4788,13 +4819,21 @@ figcaption {
     margin-top: auto;
   }
 
+  .series-rightside.rightside-tokyo {
+    z-index: 0;
+  }
+
   .dropdown-div {
     padding-left: 0;
     position: relative;
   }
 
   .dropdown-div.this-drop {
-    display: none;
+    z-index: 0;
+    height: 331px;
+    background-color: rgba(255, 255, 255, 0);
+    border-right-style: none;
+    display: block;
   }
 
   .dropdown-trigger {
@@ -4818,6 +4857,10 @@ figcaption {
   .text-inside-dropdown {
     color: #000;
     text-decoration: none;
+  }
+
+  .text-inside-dropdown.paris-block.w--current, .text-inside-dropdown.indonesia-block, .text-inside-dropdown.montrea-block, .text-inside-dropdown.iceland-block, .text-inside-dropdown.tokyo-block {
+    border-right: 2px solid #000;
   }
 
   .heading {
@@ -4852,6 +4895,13 @@ figcaption {
 
   .text-block-16 {
     color: #fff;
+  }
+
+  .paris_hero_row1 {
+    z-index: 0;
+    height: 50vh;
+    max-height: none;
+    overflow: hidden;
   }
 
   .tokyo_row2 {
@@ -5037,33 +5087,44 @@ figcaption {
     max-height: 45rem;
   }
 
+  .paris-photo-scroll {
+    overflow: visible;
+  }
+
   .paris_row2 {
-    height: 45rem;
+    height: 90vh;
   }
 
   .paris_wrapper_taxi {
-    max-height: 45rem;
+    max-height: 100%;
   }
 
   .paris_photo-waiter-mme {
-    height: 45rem;
+    height: 100%;
   }
 
   .paris_text-row1 {
-    width: 32.5%;
+    width: 35%;
     max-height: 45rem;
+    margin-top: auto;
   }
 
-  .paris_photo-windows {
-    max-height: 45rem;
+  .paris_photo-windows, .paris-photo-alfa-wrapper {
+    max-height: none;
   }
 
   .paris-photo-alfa {
-    height: 30rem;
+    height: 100%;
+    max-height: none;
   }
 
-  .paris_row4 {
-    height: 40rem;
+  .paris-photo-benz {
+    z-index: 0;
+    max-height: none;
+  }
+
+  .paris_row3, .paris_row4 {
+    height: 50vh;
   }
 
   .paris_photo_anciens-wrapper {
@@ -5071,13 +5132,27 @@ figcaption {
   }
 
   .paris_photo_anciens {
+    z-index: 0;
     height: 100%;
     max-height: none;
     object-position: 50% 0%;
   }
 
+  .paris_row5 {
+    height: 50vh;
+  }
+
   .paris_photo_trio {
-    max-height: 30rem;
+    height: 100%;
+    max-height: none;
+  }
+
+  .paris_row6 {
+    margin-top: 25vh;
+  }
+
+  .paris_row6-1, .paris_row6-2, .paris_row6-3, .paris_row6-4 {
+    height: 45vh;
   }
 
   .paris_photo-postcards {
@@ -5089,7 +5164,12 @@ figcaption {
   }
 
   .paris-photo-street {
-    height: 30rem;
+    height: 100%;
+  }
+
+  .paris-photo-window {
+    max-height: none;
+    margin-bottom: 36px;
   }
 
   .paris_photo-garage {
@@ -5097,7 +5177,11 @@ figcaption {
   }
 
   .paris-photo-smallcar {
-    height: 30rem;
+    height: auto;
+  }
+
+  .paris-photo-scootergirl {
+    max-height: none;
   }
 
   .paris_photo-rangerover {
@@ -5105,7 +5189,12 @@ figcaption {
   }
 
   .paris-photo-xj6 {
-    height: 30rem;
+    height: auto;
+    max-height: none;
+  }
+
+  .paris-photo-elevator {
+    max-height: none;
   }
 
   .paris_photo-churchtop {
@@ -5113,9 +5202,17 @@ figcaption {
   }
 
   .paris-photo-bluestreet {
-    height: 23rem;
-    max-height: 23rem;
+    height: auto;
+    max-height: none;
     margin-top: 5rem;
+  }
+
+  .paris-photo-movingcar {
+    max-height: none;
+  }
+
+  .paris_row7 {
+    margin-top: 15vh;
   }
 
   .paris_text1 {
@@ -5150,7 +5247,7 @@ figcaption {
   }
 
   .paris_row8 {
-    height: 25rem;
+    height: 40vh;
   }
 
   .paris_wrapper-cafe {
@@ -5170,23 +5267,37 @@ figcaption {
   }
 
   .paris_row9 {
-    height: 25rem;
+    height: 40vh;
   }
 
   .paris-image-roundbuilding, .paris_cafe_nike {
     max-height: none;
   }
 
+  .paris_row10 {
+    height: 40vh;
+    display: none;
+  }
+
+  .paris_wrapper-trio {
+    height: 100%;
+  }
+
   .paris-image-trio {
-    max-height: 30rem;
+    max-height: none;
+  }
+
+  .paris_row11 {
+    margin-top: 5vh;
   }
 
   .paris_image-cafeflore {
-    max-height: 35rem;
+    height: 100%;
+    max-height: none;
   }
 
   .paris-image-alpine {
-    max-height: 30rem;
+    max-height: none;
   }
 
   .paris_text-custom-2-copy-copy {
@@ -5194,7 +5305,7 @@ figcaption {
   }
 
   .paris_row13 {
-    height: 25rem;
+    height: 40vh;
   }
 
   .paris_cafe_image-copy {
@@ -5203,22 +5314,42 @@ figcaption {
 
   .paris-image-arlequin2 {
     max-height: none;
+    object-position: 50% 100%;
   }
 
   .paris_row14 {
-    height: 25rem;
+    height: 40vh;
   }
 
   .paris-image-arlequin3, .paris_cafe_arlequin4 {
     max-height: none;
   }
 
-  .paris-image-mmeetage, .paris_photo-buildinghistoric {
-    max-height: 45rem;
+  .paris_row15 {
+    height: 50vh;
+  }
+
+  .paris-image-mmeetage {
+    max-height: none;
+  }
+
+  .paris_row16 {
+    height: 50vh;
+  }
+
+  .paris_photo-buildinghistoric {
+    max-height: none;
   }
 
   .paris-photo-trainup {
-    height: 30rem;
+    height: 100%;
+  }
+
+  .paris-photo-building {
+    z-index: 0;
+    height: 100%;
+    max-height: none;
+    object-position: 50% 0%;
   }
 
   .tokyo-bikeman, .tokyo-photo-bikeboy, .tokyo-taxidriver-shades {
@@ -5233,15 +5364,71 @@ figcaption {
     grid-template-rows: 4rem repeat(auto-fit, 87vh) 6.5vh;
     position: static;
   }
+
+  .text-block-38 {
+    text-transform: uppercase;
+    margin-left: 1rem;
+    padding-top: 0;
+    font-family: Oswald, sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+  }
 }
 
 @media screen and (min-width: 1920px) {
+  .div-block-6 {
+    font-size: 1rem;
+  }
+
+  .text-block-3 {
+    font-size: 4.5rem;
+  }
+
+  .text-block-3.email {
+    font-size: 2.5rem;
+  }
+
+  .link-block {
+    font-size: 1rem;
+  }
+
+  .whole-right-side {
+    min-width: 13rem;
+    font-size: 1rem;
+  }
+
+  .submit-button {
+    font-size: 1.4rem;
+  }
+
+  .textarea {
+    height: 150px;
+    margin-bottom: 27px;
+    font-size: 1.5rem;
+  }
+
+  .interactdiv {
+    font-size: 1rem;
+  }
+
   .series-rightside.rightside-tokyo {
     border-left-style: none;
   }
 
   .tokyo_photos_scroll {
     position: relative;
+  }
+
+  .link-block-cities.tokyo {
+    font-size: 1rem;
+  }
+
+  .text-inside-dropdown.paris-block.w--current, .text-inside-dropdown.indonesia-block, .text-inside-dropdown.montrea-block, .text-inside-dropdown.iceland-block, .text-inside-dropdown.tokyo-block {
+    border-left: 2px solid #000;
+  }
+
+  .text-block-15 {
+    font-size: 14.4rem;
   }
 
   .center-socials {
@@ -5290,6 +5477,28 @@ figcaption {
     right: auto;
   }
 
+  .text-field-2 {
+    height: 50px;
+    margin-bottom: -1px;
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .text-field-3 {
+    height: 50px;
+    margin-bottom: -1px;
+    font-size: 1.5rem;
+  }
+
+  .text-block-36 {
+    font-size: 1.5rem;
+  }
+
+  .div-block-28 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .paris-photo-scroll {
     position: relative;
   }
@@ -5331,6 +5540,11 @@ figcaption {
 
   .space_10---5-tablet {
     width: 10%;
+  }
+
+  .form-2 {
+    height: 350px;
+    margin-top: auto;
   }
 }
 
@@ -5541,12 +5755,22 @@ figcaption {
   }
 
   .nav-menu {
-    width: 79.8%;
-    height: auto;
+    width: 100vw;
+    height: 100vh;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    background-color: rgba(200, 200, 200, 0);
     border-top: 2px solid #000;
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-left: 0;
     margin-right: auto;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
   }
 
   .navbar-final {
@@ -5647,6 +5871,10 @@ figcaption {
   .main-body-grid {
     grid-template-columns: 55% 40% repeat(auto-fit, 20%);
     justify-content: center;
+  }
+
+  .main-body-grid.contact-mobile {
+    margin-bottom: auto;
   }
 
   .text-block-4 {
@@ -5809,10 +6037,18 @@ figcaption {
   .link-block-4 {
     height: 3rem;
     border-left-style: none;
+    position: static;
+  }
+
+  .link-block-4.contact-div {
+    background-color: rgba(200, 200, 200, 0);
+    position: static;
   }
 
   .link-block-4.about-div {
     height: 3rem;
+    margin-top: 40%;
+    position: static;
   }
 
   .underline.u-about, .underline.u-series, .underline.u-contact {
@@ -6200,8 +6436,9 @@ figcaption {
   }
 
   .nav-menu {
-    width: 74.5%;
-    margin-top: 2px;
+    width: 100%;
+    height: 110vh;
+    margin-top: -3px;
     margin-right: 2px;
     padding-right: 0;
   }
@@ -6342,7 +6579,7 @@ figcaption {
   }
 
   .brand {
-    align-self: flex-end;
+    align-self: center;
   }
 
   .brand.w--current {
@@ -6383,7 +6620,8 @@ figcaption {
   }
 
   .color-block {
-    height: 10rem;
+    width: 100%;
+    height: 15vh;
   }
 
   .color-block.prints-form {
@@ -6770,6 +7008,7 @@ figcaption {
 
   .main-wrapper {
     border-bottom: 2px solid #000;
+    border-right: 2px solid #000;
   }
 
   .main-wrapper.series-wrapper {
@@ -6777,25 +7016,30 @@ figcaption {
     border-left: 0 solid #000;
   }
 
+  .main-wrapper.series-page {
+    border-right-style: none;
+  }
+
   .navbar {
     z-index: 6;
     border-top-style: none;
     border-bottom-style: none;
-    border-right: 2px #000;
+    border-right: 4px #000;
   }
 
   .nav-menu {
-    width: 74%;
+    width: 100%;
     border-top: 2px solid #000;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px #000;
     border-right: 1px solid #000;
     margin-left: 0;
   }
 
   .navbar-final.contact-navbar {
     border-top: 2px solid #000;
-    border-bottom: 2px #000;
-    border-right: 2px #000;
+    border-bottom: 2px solid #000;
+    border-right: 2px solid #000;
+    margin-top: -3px;
   }
 
   .div-block-3 {
@@ -6837,7 +7081,9 @@ figcaption {
   }
 
   .left-side {
-    grid-template-rows: 6.8vh repeat(auto-fit, 93.5vh);
+    border-left-style: none;
+    border-right: 2px #000;
+    grid-template-rows: 6.3vh repeat(auto-fit, 93.5vh);
   }
 
   .left-side.series {
@@ -6919,7 +7165,8 @@ figcaption {
   }
 
   .nav-bar.contact-mobilepage {
-    border-right: 2px #000;
+    border-bottom-style: none;
+    border-right: 2px solid #000;
   }
 
   .hero-paris {
@@ -6953,7 +7200,8 @@ figcaption {
     min-height: 0;
     object-fit: cover;
     object-position: 100% 100%;
-    background-color: #000;
+    background-color: #ddd;
+    border-right-style: none;
     border-right-width: 2px;
   }
 
@@ -6961,7 +7209,8 @@ figcaption {
     background-color: #ddd;
     border-right-width: 2px;
     grid-template-columns: 95% 0%;
-    margin-top: -2px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .burgundy-block {
@@ -7019,6 +7268,10 @@ figcaption {
     display: none;
   }
 
+  .brand {
+    margin-top: 4px;
+  }
+
   .brand.w--current {
     margin-bottom: 2px;
     padding-bottom: 0;
@@ -7060,6 +7313,7 @@ figcaption {
     border-right-width: 2px;
     grid-template-columns: 5% 95%;
     margin-top: 0;
+    margin-bottom: auto;
   }
 
   .color-block {
@@ -7143,7 +7397,8 @@ figcaption {
   }
 
   .paris_hero_row1 {
-    max-height: 20rem;
+    height: 70vh;
+    max-height: none;
     margin-top: 0;
   }
 
@@ -7213,6 +7468,10 @@ figcaption {
 
   .tokyo_wrapper-taxi {
     width: 37.5%;
+  }
+
+  .link-block-4.about-div {
+    margin-top: 60%;
   }
 
   .text-block-25 {
@@ -7399,7 +7658,12 @@ figcaption {
     padding-top: 0;
   }
 
-  .series-navbar, .series-navbar.series {
+  .series-navbar {
+    width: 100%;
+    border-right-style: none;
+  }
+
+  .series-navbar.series {
     width: 100%;
   }
 
@@ -7508,12 +7772,12 @@ figcaption {
   }
 
   .paris_wrapper_taxi {
-    width: 75%;
-    max-width: 75%;
+    width: 200vw;
+    max-width: none;
   }
 
   .paris_text-row1 {
-    width: 50%;
+    width: 5%;
     justify-content: flex-start;
   }
 
@@ -7523,7 +7787,7 @@ figcaption {
   }
 
   .paris-photo-alfa-wrapper {
-    width: 40%;
+    width: 50%;
   }
 
   .paris-photo-alfa {
@@ -7531,15 +7795,35 @@ figcaption {
   }
 
   .paris_photo_benz-wrapper {
-    width: 55%;
+    width: 50%;
   }
 
   .paris-photo-benz {
     width: 100%;
+    max-height: none;
     object-position: 39% 75%;
   }
 
-  .paris_row3, .paris_row4, .paris_row5 {
+  .paris_row3 {
+    height: 50vh;
+    margin-bottom: 2rem;
+  }
+
+  .paris_row4 {
+    margin-bottom: 2rem;
+  }
+
+  .paris_photo_anciens-wrapper {
+    height: 60vh;
+  }
+
+  .paris_photo_anciens {
+    height: 100%;
+    max-height: none;
+    object-position: 80% 50%;
+  }
+
+  .paris_row5 {
     margin-bottom: 2rem;
   }
 
@@ -7547,7 +7831,19 @@ figcaption {
     width: 100%;
   }
 
-  .paris_row6-1, .paris_row6-2, .paris_row6-3, .paris_row6-4, .paris_row6-2-copy {
+  .paris_row6 {
+    margin-top: 3rem;
+  }
+
+  .paris_row6-1, .paris_row6-2 {
+    margin-bottom: 2rem;
+  }
+
+  .paris_row6-3 {
+    margin-bottom: 0;
+  }
+
+  .paris_row6-4, .paris_row6-2-copy {
     margin-bottom: 2rem;
   }
 
@@ -7557,7 +7853,8 @@ figcaption {
   }
 
   .paris-photo-street-wrapper {
-    width: 40%;
+    width: 50%;
+    margin-right: 1%;
   }
 
   .paris-photo-street {
@@ -7565,7 +7862,8 @@ figcaption {
   }
 
   .paris_photo_window-wrapper {
-    width: 55%;
+    width: 50%;
+    margin-left: 1%;
   }
 
   .paris-photo-window {
@@ -7573,8 +7871,14 @@ figcaption {
     object-position: 39% 75%;
   }
 
+  .paris_photo_garage-wrapper {
+    width: 50%;
+    margin-right: 1%;
+  }
+
   .paris_photo-garage {
-    width: 90%;
+    width: 100%;
+    max-height: none;
     object-position: 39% 75%;
   }
 
@@ -7587,7 +7891,8 @@ figcaption {
   }
 
   .paris_photo_scootergirl-wrapper {
-    width: 55%;
+    width: 50%;
+    margin-left: 1%;
   }
 
   .paris-photo-scootergirl {
@@ -7595,8 +7900,13 @@ figcaption {
     object-position: 39% 75%;
   }
 
+  .paris_photo_rangerover-wrapper {
+    width: 50%;
+    margin-right: 1%;
+  }
+
   .paris_photo-rangerover {
-    width: 90%;
+    width: 100%;
     object-position: 39% 75%;
   }
 
@@ -7609,7 +7919,8 @@ figcaption {
   }
 
   .paris_photo_elevator-wrapper {
-    width: 55%;
+    width: 50%;
+    margin-left: 1%;
   }
 
   .paris-photo-elevator {
@@ -7617,8 +7928,14 @@ figcaption {
     object-position: 39% 75%;
   }
 
+  .paris_photo_churchtop-wrapper {
+    width: 50%;
+    margin-right: 1%;
+  }
+
   .paris_photo-churchtop {
-    width: 90%;
+    width: 100%;
+    max-height: none;
     object-position: 39% 75%;
   }
 
@@ -7631,7 +7948,8 @@ figcaption {
   }
 
   .paris_photo_movingcar-wrapper {
-    width: 55%;
+    width: 50%;
+    margin-left: 1%;
   }
 
   .paris-photo-movingcar {
@@ -7645,7 +7963,8 @@ figcaption {
 
   .paris_text1 {
     z-index: 1;
-    margin: 1rem -10rem 117px 1rem;
+    width: 80vw;
+    margin: 1rem -10rem 117px 60vw;
     font-size: .8rem;
     position: relative;
   }
@@ -7678,6 +7997,8 @@ figcaption {
   }
 
   .paris_text-custom-2-copy {
+    margin-left: auto;
+    margin-right: auto;
     font-size: .8rem;
   }
 
@@ -7686,26 +8007,60 @@ figcaption {
   }
 
   .paris_row8 {
+    height: 40vh;
     margin-bottom: 2rem;
   }
 
+  .paris_wrapper-cafe {
+    width: 60%;
+  }
+
   .paris_wrapper-arctriomphe {
-    width: 37.5%;
+    width: 40%;
   }
 
   .paris_row9 {
+    height: 40vh;
     margin-bottom: 2rem;
   }
 
   .paris_wrapper-roundbuilding {
-    width: 37.5%;
+    width: 40%;
   }
 
-  .paris_row10, .paris_row12 {
+  .paris_wrapper-nike {
+    width: 60%;
+  }
+
+  .paris_row10 {
+    height: 30vh;
+    max-height: none;
+    margin-bottom: 2rem;
+  }
+
+  .paris_wrapper-trio {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+  }
+
+  .paris-image-trio {
+    height: 100%;
+    max-height: none;
+  }
+
+  .paris_image-cafeflore {
+    height: 100%;
+  }
+
+  .paris_row12 {
     margin-bottom: 2rem;
   }
 
   .paris_text-custom-2-copy-copy {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2rem;
     font-size: .8rem;
   }
 
@@ -7717,16 +8072,25 @@ figcaption {
     margin-bottom: 2rem;
   }
 
+  .paris_wrapper-arlequin1 {
+    width: 35%;
+  }
+
   .paris_wrapper-arlequin2 {
-    width: 37.5%;
+    width: 65%;
   }
 
   .paris_row14 {
+    margin-top: -2rem;
     margin-bottom: 2rem;
   }
 
   .paris_wrapper-arlequin3 {
-    width: 37.5%;
+    width: 65%;
+  }
+
+  .paris_wrapper-arlequin4 {
+    width: 35%;
   }
 
   .paris_row15 {
@@ -7749,13 +8113,19 @@ figcaption {
     margin-bottom: 2rem;
   }
 
+  .paris_wrapper-buildinghistoric {
+    width: 50%;
+    margin-right: 0;
+  }
+
   .paris_photo-buildinghistoric {
-    width: 90%;
+    width: 100%;
     object-position: 39% 75%;
   }
 
   .paris-photo-train {
     width: 40%;
+    display: none;
   }
 
   .paris-photo-trainup {
@@ -7763,7 +8133,7 @@ figcaption {
   }
 
   .paris_wrapper-building {
-    width: 55%;
+    width: 50%;
   }
 
   .paris-photo-building {
@@ -8079,7 +8449,7 @@ figcaption {
   grid-area: span 1 / span 1 / span 1 / span 1;
 }
 
-#w-node-_9eea3fa7-a29a-8cb3-06f7-c4a21153aacd-8cf4abe4 {
+#w-node-_9eea3fa7-a29a-8cb3-06f7-c4a21153aacd-8cf4abe4, #w-node-_6f27e8ec-21e0-6c50-ecdf-5372b9c6fc0e-8cf4abe4 {
   align-self: end;
 }
 
@@ -8153,7 +8523,7 @@ figcaption {
     justify-self: auto;
   }
 
-  #w-node-_7680aee2-2dc3-b616-83e4-e6b5b3bc9110-724f89ad {
+  #w-node-_7680aee2-2dc3-b616-83e4-e6b5b3bc9110-724f89ad, #w-node-_9eea3fa7-a29a-8cb3-06f7-c4a21153aa93-8cf4abe4 {
     grid-area: span 1 / span 1 / span 1 / span 1;
   }
 }
